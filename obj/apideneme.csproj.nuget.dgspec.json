@@ -1,0 +1,124 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/efeataakan/Desktop/apideneme/apideneme.csproj": {}
+  },
+  "projects": {
+    "/Users/efeataakan/Desktop/apideneme/apideneme.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/efeataakan/Desktop/apideneme/apideneme.csproj",
+        "projectName": "apideneme",
+        "projectPath": "/Users/efeataakan/Desktop/apideneme/apideneme.csproj",
+        "packagesPath": "/Users/efeataakan/.nuget/packages/",
+        "outputPath": "/Users/efeataakan/Desktop/apideneme/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/efeataakan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.64, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.7.1.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[9.0.0-preview.7.24405.7, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.7.1, )"
+            },
+            "MiniExcel": {
+              "target": "Package",
+              "version": "[1.34.1, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[4.0.2-dev-02224, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
