@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using System;
 
+// WebApplication Builder'ı oluştur
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Serilog
@@ -58,6 +59,12 @@ try
     builder.Services.AddSingleton<AdminService>(provider =>
     {
         return new AdminService(provider.GetRequiredService<IConfiguration>());
+    });
+
+    // Configure UserRoleService
+    builder.Services.AddSingleton<UserRoleService>(provider =>
+    {
+        return new UserRoleService(provider.GetRequiredService<IConfiguration>());
     });
 
     // Configure UserStockEmailService
@@ -120,6 +127,7 @@ finally
     Log.CloseAndFlush();
 }
 
+// Build the application
 var app = builder.Build();
 
 // Configure Serilog for logging
