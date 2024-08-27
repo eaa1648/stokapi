@@ -28,6 +28,97 @@
           }
         }
       },
+      "Dapper/2.1.44": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Hangfire/1.8.14": {
+        "type": "package",
+        "dependencies": {
+          "Hangfire.AspNetCore": "[1.8.14]",
+          "Hangfire.Core": "[1.8.14]",
+          "Hangfire.SqlServer": "[1.8.14]"
+        }
+      },
+      "Hangfire.AspNetCore/1.8.14": {
+        "type": "package",
+        "dependencies": {
+          "Hangfire.NetCore": "[1.8.14]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Hangfire.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Hangfire.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Hangfire.Core/1.8.14": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Hangfire.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Hangfire.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Hangfire.NetCore/1.8.14": {
+        "type": "package",
+        "dependencies": {
+          "Hangfire.Core": "[1.8.14]",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Hangfire.NetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Hangfire.NetCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Hangfire.SqlServer/1.8.14": {
+        "type": "package",
+        "dependencies": {
+          "Hangfire.Core": "[1.8.14]"
+        },
+        "compile": {
+          "lib/netstandard2.0/Hangfire.SqlServer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Hangfire.SqlServer.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "HtmlAgilityPack/1.11.64": {
         "type": "package",
         "compile": {
@@ -107,6 +198,22 @@
           "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
         }
       },
+      "Microsoft.Extensions.Configuration.Abstractions/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.0-preview.7.24405.7": {
         "type": "package",
         "compile": {
@@ -121,6 +228,41 @@
         },
         "build": {
           "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Abstractions/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "3.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
@@ -311,6 +453,19 @@
         },
         "runtime": {
           "lib/net6.0/MiniExcel.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Npgsql/8.0.3": {
@@ -547,6 +702,157 @@
         "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
         "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
         "packageIcon.png"
+      ]
+    },
+    "Dapper/2.1.44": {
+      "sha512": "L6Zdsn0mZY5+UxF2iag/X1an0g+rsPHVswsibunLvHUqby8CyYq5RoVnic1iz/hCtIcqDRTl31Aiu5JXiTyohA==",
+      "type": "package",
+      "path": "dapper/2.1.44",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.1.44.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/net6.0/Dapper.dll",
+        "lib/net6.0/Dapper.xml",
+        "lib/net7.0/Dapper.dll",
+        "lib/net7.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml",
+        "readme.md"
+      ]
+    },
+    "Hangfire/1.8.14": {
+      "sha512": "8ve7Di0xvy0ZxCxibcDEzjVVx/H4mJiYSrc5A7Oj2Q62y5vB+Fq6k03zkFj96Xlgs5ivVSeEGfreF/NECJ7tlQ==",
+      "type": "package",
+      "path": "hangfire/1.8.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING",
+        "COPYING.LESSER",
+        "LICENSE.md",
+        "LICENSE_ROYALTYFREE",
+        "LICENSE_STANDARD",
+        "NOTICES",
+        "README.md",
+        "hangfire.1.8.14.nupkg.sha512",
+        "hangfire.nuspec",
+        "icon.png"
+      ]
+    },
+    "Hangfire.AspNetCore/1.8.14": {
+      "sha512": "aTPzKN/g9SW30QB1SLTOMuckKqTVL1YAhtEpWll4LPbPTgyeBHJTChdRhrN127fj+mqJ6P4P7+HJBhNYUFTfNw==",
+      "type": "package",
+      "path": "hangfire.aspnetcore/1.8.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING",
+        "COPYING.LESSER",
+        "LICENSE.md",
+        "LICENSE_ROYALTYFREE",
+        "LICENSE_STANDARD",
+        "NOTICES",
+        "hangfire.aspnetcore.1.8.14.nupkg.sha512",
+        "hangfire.aspnetcore.nuspec",
+        "icon.png",
+        "lib/net451/Hangfire.AspNetCore.dll",
+        "lib/net451/Hangfire.AspNetCore.xml",
+        "lib/net461/Hangfire.AspNetCore.dll",
+        "lib/net461/Hangfire.AspNetCore.xml",
+        "lib/netcoreapp3.0/Hangfire.AspNetCore.dll",
+        "lib/netcoreapp3.0/Hangfire.AspNetCore.xml",
+        "lib/netstandard1.3/Hangfire.AspNetCore.dll",
+        "lib/netstandard1.3/Hangfire.AspNetCore.xml",
+        "lib/netstandard2.0/Hangfire.AspNetCore.dll",
+        "lib/netstandard2.0/Hangfire.AspNetCore.xml"
+      ]
+    },
+    "Hangfire.Core/1.8.14": {
+      "sha512": "tj/+J8/UdaxydFX6VQr5IEyBtVbAOvkQ8X8tIQKwY9zlpmK83hP4iHEQQQ26zzGUpcE1HlPc6PBUv0NgUDXS3A==",
+      "type": "package",
+      "path": "hangfire.core/1.8.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING",
+        "COPYING.LESSER",
+        "LICENSE.md",
+        "LICENSE_ROYALTYFREE",
+        "LICENSE_STANDARD",
+        "NOTICES",
+        "README.md",
+        "hangfire.core.1.8.14.nupkg.sha512",
+        "hangfire.core.nuspec",
+        "icon.png",
+        "lib/net451/Hangfire.Core.dll",
+        "lib/net451/Hangfire.Core.xml",
+        "lib/net46/Hangfire.Core.dll",
+        "lib/net46/Hangfire.Core.xml",
+        "lib/netstandard1.3/Hangfire.Core.dll",
+        "lib/netstandard1.3/Hangfire.Core.xml",
+        "lib/netstandard2.0/Hangfire.Core.dll",
+        "lib/netstandard2.0/Hangfire.Core.xml"
+      ]
+    },
+    "Hangfire.NetCore/1.8.14": {
+      "sha512": "fBLdsxWYFdrQuenvVHEj/z8nOXoOTqpWIl4qYoinBAUCVmp4qlxfFsY3Aq3VVbwket0wBH472aG2LAmYm6hjxw==",
+      "type": "package",
+      "path": "hangfire.netcore/1.8.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING",
+        "COPYING.LESSER",
+        "LICENSE.md",
+        "LICENSE_ROYALTYFREE",
+        "LICENSE_STANDARD",
+        "NOTICES",
+        "hangfire.netcore.1.8.14.nupkg.sha512",
+        "hangfire.netcore.nuspec",
+        "icon.png",
+        "lib/net451/Hangfire.NetCore.dll",
+        "lib/net451/Hangfire.NetCore.xml",
+        "lib/net461/Hangfire.NetCore.dll",
+        "lib/net461/Hangfire.NetCore.xml",
+        "lib/netstandard1.3/Hangfire.NetCore.dll",
+        "lib/netstandard1.3/Hangfire.NetCore.xml",
+        "lib/netstandard2.0/Hangfire.NetCore.dll",
+        "lib/netstandard2.0/Hangfire.NetCore.xml",
+        "lib/netstandard2.1/Hangfire.NetCore.dll",
+        "lib/netstandard2.1/Hangfire.NetCore.xml"
+      ]
+    },
+    "Hangfire.SqlServer/1.8.14": {
+      "sha512": "OrsxbJD0UYanIk4E1oqwffZSWRfltYXJa89Icn+fcWmOLGyWTiAg9j5UX4MoS2RaS3WyZG8xbZzbhoRqnujo8g==",
+      "type": "package",
+      "path": "hangfire.sqlserver/1.8.14",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING",
+        "COPYING.LESSER",
+        "LICENSE.md",
+        "LICENSE_ROYALTYFREE",
+        "LICENSE_STANDARD",
+        "NOTICES",
+        "hangfire.sqlserver.1.8.14.nupkg.sha512",
+        "hangfire.sqlserver.nuspec",
+        "icon.png",
+        "lib/net451/Hangfire.SqlServer.dll",
+        "lib/net451/Hangfire.SqlServer.xml",
+        "lib/netstandard1.3/Hangfire.SqlServer.dll",
+        "lib/netstandard1.3/Hangfire.SqlServer.xml",
+        "lib/netstandard2.0/Hangfire.SqlServer.dll",
+        "lib/netstandard2.0/Hangfire.SqlServer.xml",
+        "tools/install.sql"
       ]
     },
     "HtmlAgilityPack/1.11.64": {
@@ -902,6 +1208,21 @@
         "tools/netcoreapp2.1/System.Diagnostics.DiagnosticSource.dll"
       ]
     },
+    "Microsoft.Extensions.Configuration.Abstractions/3.0.0": {
+      "sha512": "Lge/PbXC53jI1MF2J92X5EZOeKV8Q/rlB1aV3H9I/ZTDyQGOyBcL03IAvnviWpHKj43BDkNy6kU2KKoh8kAS0g==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.abstractions/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/netcoreapp3.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "microsoft.extensions.configuration.abstractions.3.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.abstractions.nuspec"
+      ]
+    },
     "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.0-preview.7.24405.7": {
       "sha512": "ZuoB/44UTW4IbYfHk0yHtZH9LdHkfEeclxvniWs90T+f9x/NQtN4556iNIKar3MASCcrD0n2AE5y/Kv6buuNIA==",
       "type": "package",
@@ -929,6 +1250,36 @@
         "microsoft.extensions.dependencyinjection.abstractions.9.0.0-preview.7.24405.7.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/3.0.0": {
+      "sha512": "kahEeykb6FyQytoZNNXuz74X85B4weIEt8Kd+0klK48bkXDWOIHAOvNjlGsPMcS9CL935Te8QGQS83JqCbpdHA==",
+      "type": "package",
+      "path": "microsoft.extensions.fileproviders.abstractions/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/netcoreapp3.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "microsoft.extensions.fileproviders.abstractions.3.0.0.nupkg.sha512",
+        "microsoft.extensions.fileproviders.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/3.0.0": {
+      "sha512": "qeDWS5ErmkUN96BdQqpmeCmLk5HJWQ/SPw3ux5v5/Qb0hKZS5wojBMulnBC7JUEiBwg7Ir71Yjf1lFiRT5MdtQ==",
+      "type": "package",
+      "path": "microsoft.extensions.hosting.abstractions/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/netcoreapp3.0/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "microsoft.extensions.hosting.abstractions.3.0.0.nupkg.sha512",
+        "microsoft.extensions.hosting.abstractions.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
@@ -1285,6 +1636,36 @@
         "miniexcel.nuspec"
       ]
     },
+    "Newtonsoft.Json/11.0.1": {
+      "sha512": "pNN4l+J6LlpIvHOeNdXlwxv39NPJ2B5klz+Rd2UQZIx30Squ5oND1Yy3wEAUoKn0GPUj6Yxt9lxlYWQqfZcvKg==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
     "Npgsql/8.0.3": {
       "sha512": "6WEmzsQJCZAlUG1pThKg/RmeF6V+I0DmBBBE/8YzpRtEzhyZzKcK7ulMANDm5CkxrALBEC8H+5plxHWtIL7xnA==",
       "type": "package",
@@ -1551,6 +1932,8 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "BCrypt.Net-Next >= 4.0.3",
+      "Dapper >= 2.1.44",
+      "Hangfire >= 1.8.14",
       "HtmlAgilityPack >= 1.11.64",
       "MailKit >= 4.7.1.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.8",
@@ -1611,6 +1994,14 @@
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.0.3, )"
+          },
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.1.44, )"
+          },
+          "Hangfire": {
+            "target": "Package",
+            "version": "[1.8.14, )"
           },
           "HtmlAgilityPack": {
             "target": "Package",

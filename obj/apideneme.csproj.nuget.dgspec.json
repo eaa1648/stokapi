@@ -48,6 +48,14 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.44, )"
+            },
+            "Hangfire": {
+              "target": "Package",
+              "version": "[1.8.14, )"
+            },
             "HtmlAgilityPack": {
               "target": "Package",
               "version": "[1.11.64, )"

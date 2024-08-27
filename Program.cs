@@ -5,20 +5,21 @@ using System.Text;
 using Serilog;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Serilog yapılandırmasını burada yapın
+// Configure Serilog
 Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Debug()  // Minimum log seviyesi
-    .WriteTo.Console()     // Konsola log yazma
-    .WriteTo.File("logs/apideneme.log", rollingInterval: RollingInterval.Day) // Dosyaya log yazma
+    .MinimumLevel.Debug()  // Minimum log level
+    .WriteTo.Console()     // Log to console
+    .WriteTo.File("logs/apideneme.log", rollingInterval: RollingInterval.Day) // Log to file
     .CreateLogger();
 
 try
 {
-    // JWT ayarlarını appsettings.json'dan al
+    // JWT settings from appsettings.json
     var jwtSettings = builder.Configuration.GetSection("JwtSettings");
     var secretKey = jwtSettings["SecretKey"];
 
@@ -27,7 +28,7 @@ try
         throw new InvalidOperationException("SecretKey is not configured correctly in appsettings.json. It should be at least 128 bits (16 bytes) long.");
     }
 
-    // Authentication'ı yapılandır
+    // Configure Authentication
     builder.Services.AddAuthentication(options =>
     {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -47,34 +48,36 @@ try
         };
     });
 
-    // Servisleri ekleyin
+    // Configure Services
     builder.Services.AddSingleton<ScrapingService>();
     builder.Services.AddSingleton<UserService>(provider =>
     {
         return new UserService(provider.GetRequiredService<IConfiguration>().GetConnectionString("PostgreSql"));
     });
 
-    // AdminService'i ekleyin
     builder.Services.AddSingleton<AdminService>(provider =>
     {
         return new AdminService(provider.GetRequiredService<IConfiguration>());
     });
 
-    // JSON ayrıştırma seçeneklerini yapılandırın
+    // Configure UserStockEmailService
+    builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
+    builder.Services.AddTransient<UserStockEmailService>();
+
+    // Configure JSON options
     builder.Services.AddControllers().AddJsonOptions(options =>
     {
-        // JSON geçersiz kontrol karakterlerinden dolayı JSON ayrıştırıcısının kırılmasını önleyin
         options.JsonSerializerOptions.AllowTrailingCommas = true;
         options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
     });
 
-    // Swagger servisini ekleyin ve JWT kimlik doğrulamasını yapılandırın
+    // Configure Swagger
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen(c =>
     {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
 
-        // JWT Authentication'ı Swagger'a eklemek için
+        // Add JWT Authentication to Swagger
         c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
         {
             Name = "Authorization",
@@ -96,18 +99,15 @@ try
                         Id = "Bearer"
                     }
                 },
-                new string[] {}
+                Array.Empty<string>()
             }
         });
     });
 
-    // Authorization servisini ekleyin
+    // Configure Authorization
     builder.Services.AddAuthorization();
 
-    // SMTP ayarlarını yapılandırın
-    builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
-
-    // Servisleri ekleyin
+    // Register EmailService
     builder.Services.AddTransient<EmailService>();
 }
 catch (Exception ex)
@@ -122,10 +122,10 @@ finally
 
 var app = builder.Build();
 
-// Serilog ile yapılandırılmış loglama
+// Configure Serilog for logging
 app.Logger.LogInformation("Starting up");
 
-// Swagger middleware'i ekleyin
+// Configure middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -133,12 +133,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
-// Yapılandırılabilir bağlantı noktasını kullanarak uygulamayı başlatın
+// Start the application
 var port = builder.Configuration.GetValue<string>("Port") ?? "7203";
 app.Run($"https://*:7203");

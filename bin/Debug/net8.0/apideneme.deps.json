@@ -9,6 +9,8 @@
       "apideneme/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
+          "Dapper": "2.1.44",
+          "Hangfire": "1.8.14",
           "HtmlAgilityPack": "1.11.64",
           "MailKit": "4.7.1.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
@@ -39,6 +41,68 @@
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.4.0.33771"
+          }
+        }
+      },
+      "Dapper/2.1.44": {
+        "runtime": {
+          "lib/net7.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.44.46364"
+          }
+        }
+      },
+      "Hangfire/1.8.14": {
+        "dependencies": {
+          "Hangfire.AspNetCore": "1.8.14",
+          "Hangfire.Core": "1.8.14",
+          "Hangfire.SqlServer": "1.8.14"
+        }
+      },
+      "Hangfire.AspNetCore/1.8.14": {
+        "dependencies": {
+          "Hangfire.NetCore": "1.8.14"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Hangfire.AspNetCore.dll": {
+            "assemblyVersion": "1.8.14.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Hangfire.Core/1.8.14": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Hangfire.Core.dll": {
+            "assemblyVersion": "1.8.14.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Hangfire.NetCore/1.8.14": {
+        "dependencies": {
+          "Hangfire.Core": "1.8.14",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0-preview.7.24405.7",
+          "Microsoft.Extensions.Hosting.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Hangfire.NetCore.dll": {
+            "assemblyVersion": "1.8.14.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Hangfire.SqlServer/1.8.14": {
+        "dependencies": {
+          "Hangfire.Core": "1.8.14"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Hangfire.SqlServer.dll": {
+            "assemblyVersion": "1.8.14.0",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -85,12 +149,30 @@
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
+      "Microsoft.Extensions.Configuration.Abstractions/3.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.0-preview.7.24405.7"
+        }
+      },
       "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.0-preview.7.24405.7": {
         "runtime": {
           "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.24.40507"
           }
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Abstractions/3.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.0-preview.7.24405.7"
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/3.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "3.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0-preview.7.24405.7",
+          "Microsoft.Extensions.FileProviders.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
@@ -209,6 +291,14 @@
           "lib/net6.0/MiniExcel.dll": {
             "assemblyVersion": "1.34.1.0",
             "fileVersion": "1.34.1.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/11.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.1.21818"
           }
         }
       },
@@ -331,6 +421,48 @@
       "path": "bouncycastle.cryptography/2.4.0",
       "hashPath": "bouncycastle.cryptography.2.4.0.nupkg.sha512"
     },
+    "Dapper/2.1.44": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-L6Zdsn0mZY5+UxF2iag/X1an0g+rsPHVswsibunLvHUqby8CyYq5RoVnic1iz/hCtIcqDRTl31Aiu5JXiTyohA==",
+      "path": "dapper/2.1.44",
+      "hashPath": "dapper.2.1.44.nupkg.sha512"
+    },
+    "Hangfire/1.8.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8ve7Di0xvy0ZxCxibcDEzjVVx/H4mJiYSrc5A7Oj2Q62y5vB+Fq6k03zkFj96Xlgs5ivVSeEGfreF/NECJ7tlQ==",
+      "path": "hangfire/1.8.14",
+      "hashPath": "hangfire.1.8.14.nupkg.sha512"
+    },
+    "Hangfire.AspNetCore/1.8.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aTPzKN/g9SW30QB1SLTOMuckKqTVL1YAhtEpWll4LPbPTgyeBHJTChdRhrN127fj+mqJ6P4P7+HJBhNYUFTfNw==",
+      "path": "hangfire.aspnetcore/1.8.14",
+      "hashPath": "hangfire.aspnetcore.1.8.14.nupkg.sha512"
+    },
+    "Hangfire.Core/1.8.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tj/+J8/UdaxydFX6VQr5IEyBtVbAOvkQ8X8tIQKwY9zlpmK83hP4iHEQQQ26zzGUpcE1HlPc6PBUv0NgUDXS3A==",
+      "path": "hangfire.core/1.8.14",
+      "hashPath": "hangfire.core.1.8.14.nupkg.sha512"
+    },
+    "Hangfire.NetCore/1.8.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fBLdsxWYFdrQuenvVHEj/z8nOXoOTqpWIl4qYoinBAUCVmp4qlxfFsY3Aq3VVbwket0wBH472aG2LAmYm6hjxw==",
+      "path": "hangfire.netcore/1.8.14",
+      "hashPath": "hangfire.netcore.1.8.14.nupkg.sha512"
+    },
+    "Hangfire.SqlServer/1.8.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OrsxbJD0UYanIk4E1oqwffZSWRfltYXJa89Icn+fcWmOLGyWTiAg9j5UX4MoS2RaS3WyZG8xbZzbhoRqnujo8g==",
+      "path": "hangfire.sqlserver/1.8.14",
+      "hashPath": "hangfire.sqlserver.1.8.14.nupkg.sha512"
+    },
     "HtmlAgilityPack/1.11.64": {
       "type": "package",
       "serviceable": true,
@@ -366,12 +498,33 @@
       "path": "microsoft.extensions.apidescription.server/6.0.5",
       "hashPath": "microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration.Abstractions/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Lge/PbXC53jI1MF2J92X5EZOeKV8Q/rlB1aV3H9I/ZTDyQGOyBcL03IAvnviWpHKj43BDkNy6kU2KKoh8kAS0g==",
+      "path": "microsoft.extensions.configuration.abstractions/3.0.0",
+      "hashPath": "microsoft.extensions.configuration.abstractions.3.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.DependencyInjection.Abstractions/9.0.0-preview.7.24405.7": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ZuoB/44UTW4IbYfHk0yHtZH9LdHkfEeclxvniWs90T+f9x/NQtN4556iNIKar3MASCcrD0n2AE5y/Kv6buuNIA==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/9.0.0-preview.7.24405.7",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.9.0.0-preview.7.24405.7.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kahEeykb6FyQytoZNNXuz74X85B4weIEt8Kd+0klK48bkXDWOIHAOvNjlGsPMcS9CL935Te8QGQS83JqCbpdHA==",
+      "path": "microsoft.extensions.fileproviders.abstractions/3.0.0",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.3.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qeDWS5ErmkUN96BdQqpmeCmLk5HJWQ/SPw3ux5v5/Qb0hKZS5wojBMulnBC7JUEiBwg7Ir71Yjf1lFiRT5MdtQ==",
+      "path": "microsoft.extensions.hosting.abstractions/3.0.0",
+      "hashPath": "microsoft.extensions.hosting.abstractions.3.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
       "type": "package",
@@ -456,6 +609,13 @@
       "sha512": "sha512-RDGfgqf4NyjOrp2fY82Lc9xbAF1BDe94PnFHeK6GOeKey3ibUaf4oNqNgK3e05mfI2bTqMwea0sjlsJ7hKu8Yg==",
       "path": "miniexcel/1.34.1",
       "hashPath": "miniexcel.1.34.1.nupkg.sha512"
+    },
+    "Newtonsoft.Json/11.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pNN4l+J6LlpIvHOeNdXlwxv39NPJ2B5klz+Rd2UQZIx30Squ5oND1Yy3wEAUoKn0GPUj6Yxt9lxlYWQqfZcvKg==",
+      "path": "newtonsoft.json/11.0.1",
+      "hashPath": "newtonsoft.json.11.0.1.nupkg.sha512"
     },
     "Npgsql/8.0.3": {
       "type": "package",
