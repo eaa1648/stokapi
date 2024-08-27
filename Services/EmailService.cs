@@ -23,7 +23,7 @@ public class EmailService
     public async Task SendEmailAsync(string to, string subject, string body, IEnumerable<IFormFile> attachments = null)
     {
         var message = new MimeMessage();
-        message.From.Add(new MailboxAddress("Sender Name", _defaultFromAddress));
+        message.From.Add(new MailboxAddress("Mert Yazilim Staj", _defaultFromAddress));
         message.To.Add(new MailboxAddress("", to));
         message.Subject = subject;
 
