@@ -50,6 +50,7 @@ try
     });
 
     // Configure Services
+    builder.Services.AddSingleton<TransactionService>();
     builder.Services.AddSingleton<ScrapingService>();
     builder.Services.AddSingleton<UserService>(provider =>
     {
